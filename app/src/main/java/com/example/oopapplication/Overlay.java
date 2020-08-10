@@ -1,21 +1,19 @@
 package com.example.oopapplication;
-
 import android.content.Context;
 import android.graphics.Canvas;
 import android.util.AttributeSet;
 import android.view.SurfaceHolder;
 import android.view.SurfaceView;
 import android.widget.inline.InlineContentView;
-
 import androidx.annotation.NonNull;
 
 public class Overlay extends SurfaceView implements SurfaceHolder.Callback, Runnable  {
 
     // SurfaceHolder
     private SurfaceHolder mHolder;
-    // 用于绘图的Canvas
+    // Canvas
     private Canvas mCanvas;
-    // 子线程标志位
+
     private boolean mIsDrawing;
 
     public Overlay(Context context) {
@@ -39,7 +37,7 @@ public class Overlay extends SurfaceView implements SurfaceHolder.Callback, Runn
         setFocusable(true);
         setFocusableInTouchMode(true);
         this.setKeepScreenOn(true);
-        System.out.println ("OVERLAY CREATEEEEEE");
+        System.out.println ("OVERLAY CREATED");
         //mHolder.setFormat(PixelFormat.OPAQUE);
     }
 
@@ -63,7 +61,6 @@ public class Overlay extends SurfaceView implements SurfaceHolder.Callback, Runn
         } finally {
             if(mCanvas != null)
                 mHolder.unlockCanvasAndPost(mCanvas);
-            System.out.println ("ADDING FROM USER");
         }
     }
 

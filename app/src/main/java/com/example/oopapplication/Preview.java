@@ -72,7 +72,7 @@ public class Preview extends AppCompatActivity  {
 
 
     //temporary display
-    public void showrectangle(View view){
+    public void DrawRect(View view){
         View v = (View)findViewById(R.id.rect);
         if(v.getVisibility()==View.VISIBLE){
             v.setVisibility(v.INVISIBLE);
@@ -143,7 +143,6 @@ public class Preview extends AppCompatActivity  {
             e.printStackTrace();
         }
     }
-
 
     //match the size of the textureview
     private static class CompareSizeByArea implements Comparator<Size> {
