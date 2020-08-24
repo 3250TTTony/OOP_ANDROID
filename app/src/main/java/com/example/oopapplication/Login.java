@@ -6,6 +6,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
+import org.opencv.android.OpenCVLoader;
 
 public class Login extends AppCompatActivity {
 
@@ -25,6 +28,11 @@ public class Login extends AppCompatActivity {
                 ControlPanel();
             }
         });
+        if(OpenCVLoader.initDebug()){
+            Toast.makeText(getApplicationContext(),"OpenCV loaded successfully",Toast.LENGTH_SHORT).show();
+        }else{
+            Toast.makeText(getApplicationContext(),"Could not load",Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void ControlPanel(){
